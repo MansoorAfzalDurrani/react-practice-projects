@@ -36,7 +36,8 @@ function App() {
     <>
       <div className=" w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 text-orange-500 bg-gray-800">
         <h1 className=" text-white text-centre my-3"> Password Generator</h1>
-        <div className='className= "flex shadow rounded-lg overflow-hidden mb-4"'>
+
+        <div className="flex shadow rounded-lg overflow-hidden mb-4">
           <input
             type=" text"
             value={password}
@@ -48,46 +49,47 @@ function App() {
           <button
             onClick={copyPasswordToClipboard}
             className="outline-none bg-blue-700 text-white
-          px-3 py-0.5 shrink-0"
+              px-3 py-0.5 shrink-0"
           >
             Copy
           </button>
-          <div className="flex text-sm gap-x-2">
-            <div className="flex items-center gap-x-1">
-              <input
-                type="range"
-                min={6}
-                max={100}
-                value={length}
-                className="cursor-oointer"
-                onChange={(e) => {
-                  setlength(e.target.value);
-                }}
-              />
-              <lable> Length: {length}</lable>
-            </div>
-            <div className="flex items-center gap-x-1">
-              <input
-                type="checkbox"
-                defaultChecked={numberAllowed}
-                id="numberInput"
-                onChange={() => {
-                  setnumberAllowed((prev) => !prev);
-                }}
-              />
-              <label htmlFor="numberInput">Numbers</label>
-            </div>
-            <div className="flex items-center gap-x-1">
-              <input
-                type="checkbox"
-                defaultChecked={charAllowed}
-                id="characterInput"
-                onChange={() => {
-                  setnumberAllowed((prev) => !prev);
-                }}
-              />
-              <label htmlFor="characterInput">Characters</label>
-            </div>
+        </div>
+
+        <div className="flex text-sm gap-x-2">
+          <div className="flex items-center gap-x-1">
+            <input
+              type="range"
+              min={6}
+              max={100}
+              value={length}
+              className="cursor-oointer"
+              onChange={(e) => {
+                setlength(e.target.value);
+              }}
+            />
+            <lable> Length: {length}</lable>
+          </div>
+          <div className="flex items-center gap-x-1">
+            <input
+              type="checkbox"
+              defaultChecked={numberAllowed}
+              id="numberInput"
+              onChange={() => {
+                setnumberAllowed((prev) => !prev);
+              }}
+            />
+            <label htmlFor="numberInput">Numbers</label>
+          </div>
+          <div className="flex items-center gap-x-1">
+            <input
+              type="checkbox"
+              defaultChecked={charAllowed}
+              id="characterInput"
+              onChange={() => {
+                setcharAllowed((prev) => !prev);
+              }}
+            />
+            <label htmlFor="characterInput"> Special Characters</label>
           </div>
         </div>
       </div>
